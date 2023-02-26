@@ -1,0 +1,27 @@
+@import 'media-queries';
+
+$primary: #154F78;
+
+$small-padding: 12px;
+$medium-padding: 24px;
+
+$small-font: 18px;
+$medium-font: 28px;
+
+.card {
+    position: absolute;
+    width: calc(70vw - 50px);
+    height: auto;
+    border-radius: 18px 18px 0 0;
+    overflow: hidden;
+
+    @include desktop {
+        width: calc(80vw - 50px);
+    }
+
+    @import 'card/card__head';
+
+    @import 'card/card__main';
+
+    @import 'card/card__foot';
+}

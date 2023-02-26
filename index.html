@@ -1,82 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.1/css/all.css'>
+    <title>ID CARD</title>
 </head>
 <body>
-    <div class="wrapper">
-        <table  style="border: 1px solid black; width: 40%; margin: 0 30% 0 30%">
-            <thead> 
-                <tr>
-                    <th></th>
-                    <th>
-                        <h1>ID CARD</h1>
-                    </th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th>
-                        <a href="https://instagram.com/">
-                            <img src="image.jpg" alt="id image" width="200" height="225">
-                        </a>
-                    </th>
-                    <th width="200">
-                        <ul style="list-style: none; text-align: left; line-height: 2.6px;">
-                            <br><br><br>
-                            <li>
-                                <span>nome e cognome</span>
-                                <h4>Mattia Cossu</h4>
-                            </li>
-                            <br><br><br>
-                            <li>
-                                <span>indirizzo</span>
-                                <h4>Via Antonio</h4>
-                            </li>
-                            <br><br><br>
-                            <li>
-                                <span>data di nascita</span>
-                                <h4>20/01/03</h4>
-                            </li>
-                            <br><br><br>
-                            <li>
-                                <span>Luogo di nascita</span>
-                                <h4>Perugia</h4>
-                            </li>
-                            <br><br><br>
-                        </ul>
-                    </th>
-                    <th width="200">
-                        <ul style="list-style: none; text-align: left; line-height: 2.6px;">
-                            <br><br><br>
-                            <li>
-                                <span>Nazionalita</span>
-                                <h4>Ita</h4>
-                            </li>
-                            <br><br><br>
-                            <li>
-                                <span>Scadenza</span>
-                                <h4>20/01/2035</h4>
-                            </li>
-                            <br><br><br>
-                        </ul>
-                    </th>
-                </tr>
-            </tbody>
-            <tfoot>
-                <tr>
-                    <th></th>
-                    <th>
-                        <h3>ITALIA</h3>
-                    </th>
-                    <th></th>
-                </tr>
-            </tfoot>
-        </table>
-    </div>
+    <main>
+        <div class="card">
+            <div class="card__head">
+                <div class="card__head--img">
+                    <img src="img/Its_logo.png" alt="Its Logo">
+                </div>
+            </div>
+            <div class="card__main">
+                <div class="card__main--img">
+                    <img src="img/img_avatar.png" alt="avatar">
+                </div>
+                <div class="card__main--text">
+                    <ul>
+                        <li>
+                            <p><b>Surname:</b></p>
+                            <p>MAILS</p>
+                        </li>
+                        <li>
+                            <p><b>Name:</b></p>
+                            <p>JACK</p>
+                        </li>
+                        <li>
+                            <p><b>Date of birth:</b></p>
+                            <p>12/04/2001</p>
+                        </li>
+                        <li>
+                            <p><b>Course:</b></p>
+                            <p>Digital/CyberSecurity</p>
+                        </li>
+                        <li>
+                            <p><b>Phone:</b></p>
+                            <p>+39 398 8773763</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card__main--text">
+                    <ul>
+                        <li>
+                            <p><b>Starting Date:</b></p>
+                            <p>12/10/2022</p>
+                        </li>
+                        <li>
+                            <p><b>Place:</b></p>
+                            <p>New York</p>
+                        </li>
+                        <li>
+                            <p><b>Serial number:</b></p>
+                            <p>AHD8DB32N2</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card__foot">
+                <div class="card__foot--buttons">
+                    <a href="#" class="card__foot--button card__foot--button--facebook" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a> 
+                    <a href="#" class="card__foot--button card__foot--button--instagram" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a> 
+                    <a href="#" class="card__foot--button card__foot--button--linkedin" aria-label="Linkedin">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a> 
+                    <a href="#" class="card__foot--button card__foot--button--github" aria-label="Linkedin">
+                        <i class="fab fa-github"></i>
+                    </a> 
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
 </body>
 </html>
