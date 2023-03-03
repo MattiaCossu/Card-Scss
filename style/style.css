@@ -1,47 +1,40 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 .card {
-  position: absolute;
-  width: calc(70vw - 50px);
-  height: auto;
-  border-radius: 18px 18px 0 0;
-  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  position: relative;
+  min-height: 1200px;
 }
 @media all and (min-width: 1280px) and (max-width: 1689px) {
   .card {
-    width: calc(80vw - 50px);
+    min-height: auto;
   }
 }
-.card__head {
+.card__face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.card__face--front {
+  left: 20%;
+  top: 25%;
+}
+.card__face--front--head {
   background-color: #154F78;
   border-radius: 18px 18px 0 0;
-  height: 100%;
 }
-.card__head--img {
+.card__face--front--head--img {
   position: relative;
-  height: 10vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
-@media all and (min-width: 1280px) and (max-width: 1689px) {
-  .card__head--img {
-    display: block;
-  }
-}
-.card__head--img img {
-  position: absolute;
-  max-height: 100%;
-  height: calc(80% - 20px);
-  width: auto;
-  bottom: 0;
+.card__face--front--head--img img {
+  width: 250px;
   padding: 24px;
 }
-@media all and (min-width: 1280px) and (max-width: 1689px) {
-  .card__head--img img {
-    height: auto;
-  }
-}
-.card__main {
+.card__face--front--main {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -49,77 +42,74 @@
   align-content: center;
   border-left: 5px solid #154F78;
   border-right: 5px solid #154F78;
+  padding: 24px;
   background-color: #ffffff;
 }
 @media all and (min-width: 1280px) and (max-width: 1689px) {
-  .card__main {
+  .card__face--front--main {
     flex-direction: row;
-    justify-content: flex-start;
     gap: 28px;
   }
 }
-.card__main--img {
+.card__face--front--main--img {
   padding: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.card__main--img img {
-  width: 400px;
-  height: 400px;
+.card__face--front--main--img img {
+  width: 250px;
+  height: 250px;
 }
-.card__main--text {
+.card__face--front--main--text {
   display: flex;
   align-items: center;
   padding: 24px;
   padding-bottom: 0;
   padding-top: 0;
 }
-.card__main--text ul {
+.card__face--front--main--text ul {
   list-style: none;
 }
-.card__main--text ul li {
+.card__face--front--main--text ul li {
   margin-bottom: 18px;
 }
-.card__main--text ul li p {
+.card__face--front--main--text ul li p {
   font-size: 28px;
 }
 @media all and (min-width: 1280px) and (max-width: 1689px) {
-  .card__main--text ul li p {
+  .card__face--front--main--text ul li p {
     font-size: 18px;
   }
 }
-.card__foot {
+.card__face--front--foot {
   background-color: #154F78;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 10vh;
   border-radius: 0 0 24px 24px;
 }
-.card__foot--buttons {
+.card__face--front--foot--buttons {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  padding: 12px;
   gap: 8px;
 }
-.card__foot--button {
+.card__face--front--foot--button {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   outline: none;
-  width: 94px;
-  height: 94px;
+  width: 64px;
+  height: 64px;
   text-decoration: none;
   border-radius: 100%;
   background: #fff;
   text-align: center;
 }
-@media all and (min-width: 1280px) and (max-width: 1689px) {
-  .card__foot--button {
-    width: 48px;
-    height: 48px;
-  }
-}
-.card__foot--button::after {
+.card__face--front--foot--button::after {
   content: "";
   position: absolute;
   top: -1px;
@@ -130,72 +120,106 @@
   border-radius: 100%;
   transition: 0.3s;
 }
-.card__foot--button:focus, .card__foot--button:hover {
+.card__face--front--foot--button:focus, .card__face--front--foot--button:hover {
   color: #fff;
 }
-.card__foot--button:focus::after, .card__foot--button:hover::after {
+.card__face--front--foot--button:focus::after, .card__face--front--foot--button:hover::after {
   width: calc(100% + 2px);
   height: calc(100% + 2px);
   margin-left: calc(-50% - 1px);
 }
-.card__foot--button i,
-.card__foot--button svg {
+.card__face--front--foot--button i,
+.card__face--front--foot--button svg {
   position: relative;
   z-index: 1;
   transition: 0.3s;
 }
-.card__foot--button i {
-  font-size: 37.6px;
+.card__face--front--foot--button i {
+  font-size: 25.6px;
 }
-@media all and (min-width: 1280px) and (max-width: 1689px) {
-  .card__foot--button i {
-    font-size: 25.6px;
-  }
-}
-.card__foot--button svg {
+.card__face--front--foot--button svg {
   height: 40%;
   width: 40%;
 }
-.card__foot--button--facebook {
+.card__face--front--foot--button--facebook {
   color: #3b5999;
 }
-.card__foot--button--facebook::after {
+.card__face--front--foot--button--facebook::after {
   background: #3b5999;
 }
-.card__foot--button--linkedin {
+.card__face--front--foot--button--linkedin {
   color: #0077b5;
 }
-.card__foot--button--linkedin::after {
+.card__face--front--foot--button--linkedin::after {
   background: #0077b5;
 }
-.card__foot--button--github {
+.card__face--front--foot--button--github {
   color: #6e5494;
 }
-.card__foot--button--github::after {
+.card__face--front--foot--button--github::after {
   background: #6e5494;
 }
-.card__foot--button--instagram {
+.card__face--front--foot--button--instagram {
   color: #e4405f;
 }
-.card__foot--button--instagram::after {
+.card__face--front--foot--button--instagram::after {
   background: #e4405f;
+}
+.card__face--back {
+  left: -20%;
+  top: 25%;
+  border-radius: 18px;
+  background-color: #154F78;
+  transform: rotateY(180deg);
+}
+@media all and (min-width: 1280px) and (max-width: 1689px) {
+  .card__face--back {
+    left: 20%;
+    top: -25%;
+    transform: rotateX(180deg);
+  }
+}
+.card__face--back--content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 18px;
+  height: 100%;
+}
+.card__face--back--content :nth-child(1) {
+  width: 200px;
+  height: 200px;
+  border-radius: 18px;
+}
+.card__face--back--content :nth-child(2) {
+  width: auto;
+  height: 50px;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
 }
 
 body {
-  background-color: #f8f9fa;
+  font-family: sans-serif;
 }
 
-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
+.container {
+  max-width: 70%;
+  height: 500px;
+  perspective: 100em;
 }
+
+.card.is-flipped {
+  transform: rotateY(180deg);
+}
+@media all and (min-width: 1280px) and (max-width: 1689px) {
+  .card.is-flipped {
+    transform: rotateX(180deg);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
